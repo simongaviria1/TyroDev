@@ -1,4 +1,4 @@
-# TyroDev
+#TyroDev
 TyroDev is a developer tool that displays side by side editors to allow new developers to easily find solutions to their code issues.
 ![spliteditor](./doc/tyrodevspliteditor.png)
 
@@ -30,15 +30,6 @@ npm start
  - [react](https://reactjs.org/) - JavaScript Library
  - HTML/CSS
 - [github embed](https://github.com/finom/github-embed) 
-
-
-## Contributors
-[Newton Brooks](https://github.com/newton-brooks) - Scrum Master
-[Elon Jefferson](https://github.com/Edje-C) - UX/UI Lead
-[Monique Mojica](https://github.com/mon33k) - Project Manager
-[Simon Garvaria](https://github.com/simongaviria1) - Technical Lead
-[Carlo Valenti](https://github.com/cval-c4q) - Demo Lead
-
 
 ## Fun Facts
 - This project was built over one month for our Coalition for Queens (C4Q) capstone project in March of 2018.
