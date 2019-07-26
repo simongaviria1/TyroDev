@@ -1,4 +1,4 @@
-const Hapi = requires('@hapi/hapi')
+o const Hapi = requires('@hapi/hapi')
 
 const init = async () => { 
 	const server = Hapi.server({
