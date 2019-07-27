@@ -58,10 +58,6 @@ CREATE TABLE comments (
     commentDate VARCHAR
 );
 
-
-
-
-
 INSERT INTO users (username, fullName, password_digest, email, profile_pic, stack, links)
   VALUES('MoMo','Monique Mojica', '$2a$10$noryJFgByFccCS/F6XILSeqM.3TqBhmRJ0QtAMPHtlzriqk6rsY8S', 'moniquemojica@ac.c4q.nyc', 'https://media.licdn.com/dms/image/C5603AQH4BiE3sUUIWQ/profile-displayphoto-shrink_800_800/0?e=1527746400&v=alpha&t=T_1KJr52ctP68HOtsmfnTMkfsVcLWXoInOGkTp3SzSQ', 'HTML, Python', 'https://github.com/mon33k, https://www.linkedin.com/in/moniquemojica/'),
          ('Si-Mon', 'Simon Gaviria', '$2a$10$noryJFgByFccCS/F6XILSeqM.3TqBhmRJ0QtAMPHtlzriqk6rsY8S', 'SimonGaviria@ac.c4q.nyc', 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13728904_10157222653865646_727791143406575721_n.jpg?_nc_cat=0&oh=2c89431678d5fb663a0e898e175ee0b0&oe=5B2C7F6B', 'Basic, Assembly, ASCII', 'https://github.com/simongaviria1, https://www.linkedin.com/in/simon-gaviria/'),
