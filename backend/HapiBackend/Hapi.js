@@ -32,21 +32,33 @@ const init = async () => {
 	})
 
 	server.route({
-		method: 'POST',
-		path: '/users/login',
-		handler: (request, response) => {
-			console.log(response)
-			return {};
+		method: 'GET',
+		path: '/get',
+		handler: (request, h) => {
+			const query = request.query
+
+			return 'it works'
 		}
 	})
 
 	server.route({
 		method: "GET",
 		path: '/users/getLoggedInUser',
-		handler: (request, response) => {
+		handler: (request, h) => {
 			console.log(true)
 			console.log(db.getUser)
 			return db.getUser();
+		}
+	})
+
+	server.route({
+		method: 'POST',
+		path: '/',
+		handler: (request, reply) => {
+			const payload = request.payload
+			console.log(payload)
+
+			return payload
 		}
 	})
 
