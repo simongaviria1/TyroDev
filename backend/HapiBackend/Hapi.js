@@ -1,4 +1,6 @@
 const Hapi = require('@hapi/hapi')
+// const users = require('.././routes/users')
+const db = require("../db/queries");
 
 const init = async () => {
 	const server = Hapi.server({
@@ -25,17 +27,26 @@ const init = async () => {
 					'password': '12345678'
 				}
 			}
-			console.log(h)
 			return accountMoch;
 		}
 	})
 
 	server.route({
 		method: 'POST',
-		path: '/account',
+		path: '/users/login',
 		handler: (request, response) => {
 			console.log(response)
-			return request.payload;
+			return {};
+		}
+	})
+
+	server.route({
+		method: "GET",
+		path: '/users/getLoggedInUser',
+		handler: (request, response) => {
+			console.log(true)
+			console.log(db.getUser)
+			return db.getUser();
 		}
 	})
 
