@@ -1,55 +1,38 @@
 const Hapi = require('@hapi/hapi')
-// const users = require('.././routes/users')
-const db = require("../db/queries");
+const Path = require('path')
 
 const init = async () => {
+	// const server = Hapi.server({
+	// 	port: 3001,
+	// 	host: 'localhost'
+	// });
+
 	const server = Hapi.server({
-		port: 3001,
-		host: 'localhost'
-	});
+		routes: {
+			files: {
+				relativeTo: Path.join(__dirname, 'public')
+			}
+		}
+	})
+
+	await server.register(require('@hapi/inert'));
+
+	server.route({
+		method: 'GET',
+		path: '/homepage',
+		handler: (request, h) => {
+			return 'hello'
+		}
+	})
 
 	server.route({
 		method: 'GET',
 		path: '/',
 		handler: (request, h) => {
-			return 'Hello World!'
+			return h.file('../.././frontend/public/index.html')
 		}
 	});
 
-	server.route({
-		method: 'GET',
-		path: '/account/{username}',
-		handler: (request, h) => {
-			var accountMoch = {};
-			if (request.params.username === 'simon') {
-				accountMoch = {
-					'username': 'simon',
-					'password': '12345678'
-				}
-			}
-			return accountMoch;
-		}
-	})
-
-	server.route({
-		method: 'GET',
-		path: '/get',
-		handler: (request, h) => {
-			const query = request.query
-
-			return 'it works'
-		}
-	})
-
-	server.route({
-		method: "GET",
-		path: '/users/getLoggedInUser',
-		handler: (request, h) => {
-			console.log(true)
-			console.log(db.getUser)
-			return db.getUser();
-		}
-	})
 
 	server.route({
 		method: 'POST',
@@ -65,6 +48,8 @@ const init = async () => {
 	await server.start();
 	console.log(`Server running on %s`, server.info.uri);
 };
+
+
 
 process.on('unhandledRejection', (err) => {
 	console.log(err);
